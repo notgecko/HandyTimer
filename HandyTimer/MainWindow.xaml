@@ -1,0 +1,16 @@
+﻿<Window x:Class="HandyTimer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HandyTimer"
+        mc:Ignorable="d"
+        Title="HandyTimer" Height="450" Width="800" >
+    <Grid>
+        <ToggleButton Name="BtnStartStop" Content="Start"
+                      Checked="BtnStartStop_OnChecked" Unchecked="BtnStartStop_OnUnchecked"></ToggleButton>
+        <Label Name="LblTimer" Content="00:00:00"
+               FontSize="20" FontFamily="Segoe" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+    </Grid>
+</Window>
