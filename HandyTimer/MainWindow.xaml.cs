@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,17 +42,27 @@ namespace HandyTimer
         private void TimerOnTick(object? sender, EventArgs e)
         {
             _disp++;
-            LblTimer.Content = _disp.ToString();
+            TbcTimer.Text = _disp.ToString();
         }
 
         private void BtnStartStop_OnChecked(object sender, RoutedEventArgs e)
         {
             _timer?.Start();
+            BtnStartStop.Content = "Stop";
         }
 
         private void BtnStartStop_OnUnchecked(object sender, RoutedEventArgs e)
         {
             _timer?.Stop();
+            BtnStartStop.Content = "Start";
+        }
+
+        private void BtnReset_OnClick(object sender, RoutedEventArgs e)
+        {
+            BtnStartStop.IsChecked = false;
+            // BtnStartStop_OnUnchecked(sender, e);
+            _disp = 0;
+            TbcTimer.Text = "00:00:00";
         }
     }
 }

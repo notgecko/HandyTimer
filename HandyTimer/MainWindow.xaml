@@ -5,12 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HandyTimer"
         mc:Ignorable="d"
-        Title="HandyTimer" Height="450" Width="800" >
-    <Grid>
-        <ToggleButton Name="BtnStartStop" Content="Start"
-                      Checked="BtnStartStop_OnChecked" Unchecked="BtnStartStop_OnUnchecked"></ToggleButton>
-        <Label Name="LblTimer" Content="00:00:00"
-               FontSize="20" FontFamily="Segoe" 
-               HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        Title="HandyTimer" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+            Name="TbcTimer" Text="00:00:00" TextAlignment="Center"
+            FontSize="20" FontFamily="Segoe"
+            HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Button
+            Grid.Row="1" Grid.Column="0"
+            Name="BtnReset" Content="Reset"
+            Click="BtnReset_OnClick"/>
+        <TextBox
+            Grid.Row="1" Grid.Column="1"
+            Name="TxtTime" Text="00:00:00" TextAlignment="Center"
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <ToggleButton
+            Grid.Row="1" Grid.Column="2"
+            Name="BtnStartStop" Content="Start"
+            Checked="BtnStartStop_OnChecked" Unchecked="BtnStartStop_OnUnchecked" />
+
     </Grid>
 </Window>
